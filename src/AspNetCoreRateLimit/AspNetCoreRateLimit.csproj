@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1;netstandard2.0;net5.0;net6.0</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1;netstandard2.0;net5.0</TargetFrameworks>
     <Description>ASP.NET Core rate limiting middleware</Description>
     <Authors>Stefan Prodan, Cristi Pufu</Authors>
     <AssemblyName>AspNetCoreRateLimit</AssemblyName>
@@ -12,7 +12,7 @@
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/stefanprodan/AspNetCoreRateLimit</RepositoryUrl>
     <LangVersion>9</LangVersion>
-    <Version>4.0.2</Version>
+    <Version>4.0.2$(VersionSuffix)</Version>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>../../sgKey.snk</AssemblyOriginatorKeyFile>
     <DelaySign>false</DelaySign>
