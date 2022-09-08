@@ -26,7 +26,10 @@ namespace AspNetCoreRateLimit
         public async Task<IEnumerable<RateLimitRule>> GetMatchingRulesAsync(ClientRequestIdentity identity, CancellationToken cancellationToken = default)
         {
             var policy = await _policyStore.GetAsync($"{_options.ClientPolicyPrefix}_{identity.ClientId}", cancellationToken);
-
+            if (policy == null)
+            {
+                policy = await _policyStore.GetAsync($"{_options.ClientPolicyPrefix}_*",cancellationToken);
+            }
             return GetMatchingRules(identity, policy?.Rules);
         }
 

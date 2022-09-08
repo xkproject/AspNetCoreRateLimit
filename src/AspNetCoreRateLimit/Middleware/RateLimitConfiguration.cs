@@ -34,6 +34,8 @@ namespace AspNetCoreRateLimit
             {
                 ClientResolvers.Add(new ClientHeaderResolveContributor(clientIdHeader));
             }
+            // search on user from httpContext
+            ClientResolvers.Add(new ClientUserResolveContributor());
 
             // the contributors are resolved in the order of their collection index
             if (realIpHeader != null)
